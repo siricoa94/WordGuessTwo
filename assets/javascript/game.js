@@ -1,17 +1,17 @@
-const choices = ["Goku","Vegeta","Gohan","Bulma","Piccolo","Kami","Krillin"];
-const word = choices[Math.floor(Math.random() * words.length)];
-const correctGuess = [];
-const incorrectGuess = [];
-const underscore = [];
-const remainingGuess = 10;
-const startScore = 0;
+var choices = ["Goku","Vegeta","Gohan","Bulma","Piccolo","Kami","Krillin"];
+var word = choices[Math.floor(Math.random() * choices.length)];
+var correctGuess = [];
+var incorrectGuess = [];
+var underscore = [];
+var remainingGuess = 10;
+var startScore = 0;
 
 // This will be where we grab the containers from our index.html in order to push data into them
-const blank = document.getElementById("blank");
-const correct = document.getElementById("correct");
-const incorrect = document.getElementById("incorrect");
-const guess = document.getElementById("guess");
-const score = document.getElementById("score");
+var blank = document.getElementById("blank");
+var correct = document.getElementById("correct");
+var incorrect = document.getElementById("incorrect");
+var guess = document.getElementById("guess");
+var score = document.getElementById("score");
 
 score.textContent = startScore;
 guess.textContent = remainingGuess;
@@ -27,7 +27,7 @@ pushUnderscore();
 blank.textContent = underscore.join(" ");
 
 function reset () {
-    word = choices[Math.floor(Math.random() * words.length)];
+    word = choices[Math.floor(Math.random() * choices.length)];
     correctGuess = [];
     incorrectGuess = [];
     underscore = [];
@@ -36,15 +36,15 @@ function reset () {
     pushUnderscore();
 };
 
-document.onkeypress = function (event) {
-    let keycode = event.keyCode;
-    let letter = event.key;
+document.onkeyup = function (event) {
+    var keycode = event.keyCode;
+    var letter = event.key;
     
     if(event.which >= 65 && event.which <= 90) {
         if(word.indexOf(letter) > -1) {
             correctGuess.push(letter);
             correct.textContent = correctGuess.join(" ");
-            for (var i = 0; i < words.length; i++) {
+            for (var i = 0; i < word.length; i++) {
                 if (letter === word[i]) {
                     underscore[i] = letter;
                     blank.textContent = underscore.join(" ");
@@ -52,7 +52,7 @@ document.onkeypress = function (event) {
             };
         }
         else {
-            remainingGuess--
+            remainingGuess --
             guess.textContent = remainingGuess;
             incorrectGuess.push(letter);
             incorrect.textContent = incorrectGuess.join(" ");
@@ -65,6 +65,10 @@ document.onkeypress = function (event) {
         alert("Winner!");
         startScore++
         score.textContent = startScore
+        reset();
+    }
+    if(remainingGuess === 0) {
+        alert ("Loser!");
         reset();
     };
 };
