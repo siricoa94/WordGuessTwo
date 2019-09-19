@@ -13,7 +13,12 @@ const guess = document.getElementById("guess");
 const score = document.getElementById("score");
 
 score.textContent = startScore;
-
 guess.textContent = remainingGuess;
 
+function pushUnderscore() {
+    for (var i = 0; i < word.length; i++) {
+        underscore.push("☠");
+    };
+};
 
+blank.textContent = underscore.join(" ")
