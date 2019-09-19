@@ -1,0 +1,21 @@
+body{
+    background-image: url(https://cdn.pixabay.com/photo/2018/10/01/00/02/balls-3715031_1280.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+#blank{
+    position: absolute;
+    left: 35%;
+    right: 35%;
+    top: 75%;
+    background-color: black;
+    color: lime;
+    text-align: center;
+    font-size: 250%;
+    opacity: 0.75;
+    border-top-left-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+    border-top-right-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+}
