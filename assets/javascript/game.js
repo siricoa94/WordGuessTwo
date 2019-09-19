@@ -24,7 +24,7 @@ function pushUnderscore() {
 
 pushUnderscore();
 
-blank.textContent = underscore.join(" ")
+blank.textContent = underscore.join(" ");
 
 function reset () {
     word = choices[Math.floor(Math.random() * words.length)];
@@ -34,24 +34,38 @@ function reset () {
     remainingGuess = 10;
     startScore = 0;
     pushUnderscore();
-}
+};
 
 document.onkeypress = function (event) {
     let keycode = event.keyCode;
     let letter = event.key;
     
-    if(event.ehich >= 65 && event.which <= 90) {
+    if(event.which >= 65 && event.which <= 90) {
         if(word.indexOf(letter) > -1) {
             correctGuess.push(letter);
             correct.textContent = correctGuess.join(" ");
-
+            for (var i = 0; i < words.length; i++) {
+                if (letter === word[i]) {
+                    underscore[i] = letter;
+                    blank.textContent = underscore.join(" ");
+                };
+            };
         }
-        for (var i = 0; i < words.length; i++) {
-            if (letter === word[i]) {
-                underscore[i] = letter;
-                blank.textContent = underscore.join(" ");
-            }
-        }
+        else {
+            remainingGuess--
+            guess.textContent = remainingGuess;
+            incorrectGuess.push(letter);
+            incorrect.textContent = incorrectGuess.join(" ");
+        };
     }
+    else {
+        alert("Do you know what a letter is?");
+    }
+    if(!underscore.includes("_ ")) {
+        alert("Winner!");
+        startScore++
+        score.textContent = startScore
+        reset();
+    };
+};
 
-}
