@@ -10,7 +10,7 @@ body{
     right: 35%;
     top: 75%;
     background-color: black;
-    color: lime;
+    color: rgb(166,16,30);
     text-align: center;
     font-size: 250%;
     opacity: 0.75;
@@ -22,23 +22,60 @@ body{
 #score{
     position: absolute;
     background-color: black;
-    color: lime;
+    color: rgb(166,16,30);
     top: 20%;
-    left: 60%;
-    right: 37%;
+    left: 47%;
+    right: 47%;
     font-size: 250%;
-    border-top-left-radius: -50rem;
-    border-bottom-left-radius: -10rem;
-    border-top-right-radius: -10rem;
-    border-bottom-right-radius: -10rem;
+    border-top-left-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+    border-top-right-radius: 10rem;
+    border-bottom-right-radius: 10rem;
     text-align: center;
 
 }
 #incorrect{
     position: absolute;
     background-color: black;
-    color: lime;
+    color: rgb(166,16,30);
     top: 20%;
     left: 20%;
+    right: 78%;
     font-size: 250%;
+    text-align: center;
+    border-top-left-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+    border-top-right-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+    opacity: 0.75;
+}
+#correct{
+    position: absolute;
+    background-color: black;
+    color: rgb(166,16,30);
+    top: 20%;
+    left: 78%;
+    right: 20%;
+    font-size: 250%;
+    text-align: center;
+    border-top-left-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+    border-top-right-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+    opacity: 0.75;
+}
+#guess{
+    position: absolute;
+    background-color: black;
+    color: rgb(166,16,30);
+    top: 10%;
+    left: 47%;
+    right: 47%;
+    font-size: 250%;
+    border-top-left-radius: 10rem;
+    border-bottom-left-radius: 10rem;
+    border-top-right-radius: 10rem;
+    border-bottom-right-radius: 10rem;
+    text-align: center;
+
 }
