@@ -1,4 +1,4 @@
-var choices = ["Goku","Vegeta","Gohan","Bulma","Piccolo","Kami","Krillin"];
+var choices = ["goku","vegeta","gohan","bulma","piccolo","kami","krillin","trunks","nappa","tien","frieza","cell","buu"];
 var word = choices[Math.floor(Math.random() * choices.length)];
 var correctGuess = [];
 var incorrectGuess = [];
@@ -37,10 +37,10 @@ function reset () {
 };
 
 document.onkeyup = function (event) {
-    var keycode = event.keyCode;
     var letter = event.key;
     
     if(event.which >= 65 && event.which <= 90) {
+        
         if(word.indexOf(letter) > -1) {
             correctGuess.push(letter);
             correct.textContent = correctGuess.join(" ");
@@ -50,24 +50,20 @@ document.onkeyup = function (event) {
                     blank.textContent = underscore.join(" ");
                 };
             };
-        }
-        else {
-            remainingGuess --
+        } else {
+            remainingGuess--
             guess.textContent = remainingGuess;
             incorrectGuess.push(letter);
             incorrect.textContent = incorrectGuess.join(" ");
         };
-    }
-    else {
-        alert("Do you know what a letter is?");
-    }
-    if(!underscore.includes("_ ")) {
+    } else {
+        alert("Do you know what a letter is?")
+    } if(!underscore.includes("☠")) {
         alert("Winner!");
         startScore++
         score.textContent = startScore
         reset();
-    }
-    if(remainingGuess === 0) {
+    } if(remainingGuess === 0) {
         alert ("Loser!");
         reset();
     };
